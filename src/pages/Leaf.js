@@ -3,9 +3,6 @@ import { Map, TileLayer } from "react-leaflet";
 import classes from "./leaf.module.css";
 import Choro from "./Choro";
 
-//var L = require('leaflet')
-//require('leaflet-choropleth')
-
 const Leaf = (props) => {
     const { setRef, viewPort, geojson } = props;
     return (
