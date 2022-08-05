@@ -10,9 +10,18 @@ function Choro(props) {
         if (Object.keys(props.geojson).length > 0) {
             L.choropleth(props.geojson, {
                 valueProperty: "DIFF",
-                scale: ["white", "red"],
+                scale: ["black", "red"],
                 steps: 5,
                 mode: "q",
+                style: function (feature) { // Style option
+                    console.log(feature)
+                    return {
+                        'weight': 1,
+                        'color': 'black',
+                        'fillColor': 'green',
+                        'fillOpacity': 0.3
+                    }
+                },
                 onEachFeature: function (feature, layer) {
                     layer.bindPopup(
                         `<div>` +
@@ -23,7 +32,7 @@ function Choro(props) {
                         `</div>` +
                         `</div>`
                     );
-                }
+                },
             }).addTo(map);
         }
     }, [props.geojson]);
