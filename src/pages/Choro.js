@@ -15,7 +15,13 @@ function Choro(props) {
                 mode: "q",
                 onEachFeature: function (feature, layer) {
                     layer.bindPopup(
-                        `Total ${feature.properties.DIFF} <br>`
+                        `<div>` +
+                        `<img src="${require(`../assets/img/${feature.properties.img}`).default}" width="250" height="160">` +
+                        `<div class="contents">` +
+                        `<h4>${feature.properties.name}</h4>` +
+                        `<p>TOTAL : ${feature.properties.TOTAL}km<sup>2</sup></p>` +
+                        `</div>` +
+                        `</div>`
                     );
                 }
             }).addTo(map);
