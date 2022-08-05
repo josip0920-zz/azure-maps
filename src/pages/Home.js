@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Stack from '@mui/material/Stack';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
@@ -12,6 +12,7 @@ import GEOS from './data.json';
 import { CInput } from "../components/Styled";
 
 const Home = () => {
+    const [searchKey, setSearchKey] = useState('')
 
     const viewPort = {
         height: "100vh",
@@ -31,7 +32,7 @@ const Home = () => {
                         <Typography fontWeight={500}>
                             Block Search
                         </Typography>
-                        <CInput placeholder="Search" />
+                        <CInput placeholder="Search" value={searchKey} onChange={(e) => setSearchKey(e.target.value)} />
                         <Stack direction='row' justifyContent="space-between">
                             <IconButton>
                                 <FilterListIcon />
@@ -47,6 +48,7 @@ const Home = () => {
                         setRef={ref}
                         viewPort={viewPort}
                         geojson={GEOS}
+                        search={searchKey}
                     />
                 )}
             </Stack>

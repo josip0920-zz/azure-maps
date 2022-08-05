@@ -1,25 +1,37 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLeaflet } from "react-leaflet";
 import L from "leaflet";
 import "leaflet-choropleth";
 
 function Choro(props) {
     const { map } = useLeaflet();
+    const [choropleth, setChoropleth] = useState(null)
+    const { search, geojson } = props;
 
     useEffect(() => {
-        if (Object.keys(props.geojson).length > 0) {
-            L.choropleth(props.geojson, {
+        if (Object.keys(geojson).length > 0) {
+            if (choropleth) choropleth.clearLayers();
+            const _chorop = L.choropleth(geojson, {
                 valueProperty: "DIFF",
                 scale: ["black", "red"],
                 steps: 5,
                 mode: "q",
                 style: function (feature) { // Style option
-                    console.log(feature)
-                    return {
-                        'weight': 1,
-                        'color': 'black',
-                        'fillColor': 'green',
-                        'fillOpacity': 0.3
+                    console.log(search, feature.properties.name)
+                    if (search && String(feature.properties.name).toLowerCase().search(String(search).toLowerCase()) != -1) {
+                        return {
+                            'weight': 1.5,
+                            'color': 'red',
+                            'fillColor': 'blue',
+                            'fillOpacity': 0.4
+                        }
+                    } else {
+                        return {
+                            'weight': 1,
+                            'color': 'black',
+                            'fillColor': 'green',
+                            'fillOpacity': 0.3
+                        }
                     }
                 },
                 onEachFeature: function (feature, layer) {
@@ -34,8 +46,9 @@ function Choro(props) {
                     );
                 },
             }).addTo(map);
+            setChoropleth(_chorop);
         }
-    }, [props.geojson]);
+    }, [geojson, search]);
 
     return null;
 }

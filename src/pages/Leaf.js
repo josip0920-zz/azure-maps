@@ -4,7 +4,7 @@ import classes from "./leaf.module.css";
 import Choro from "./Choro";
 
 const Leaf = (props) => {
-    const { setRef, viewPort, geojson } = props;
+    const { setRef, viewPort, geojson, search } = props;
     return (
         <Map
             ref={setRef}
@@ -15,7 +15,7 @@ const Leaf = (props) => {
             <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <Choro geojson={geojson} />
+            <Choro search={search} geojson={geojson} />
         </Map>
     );
 }
