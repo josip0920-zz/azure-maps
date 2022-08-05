@@ -10,6 +10,7 @@
         {
             "type": "Feature",
             "properties": {
+                "id": 1,
                 "TOTAL": 76,
                 "img": "3.jpg",
                 "name": "Vineyard 1"
@@ -189,6 +190,7 @@
         {
             "type": "Feature",
             "properties": {
+                "id": 2,
                 "TOTAL": 23,
                 "img": "4.jpg",
                 "name": "Vineyard 2"
@@ -220,6 +222,7 @@
         {
             "type": "Feature",
             "properties": {
+                "id": 3,
                 "TOTAL": 18,
                 "img": "1.jpg",
                 "name": "Vineyard 3"
@@ -251,6 +254,7 @@
         {
             "type": "Feature",
             "properties": {
+                "id": 4,
                 "TOTAL": 14,
                 "img": "5.jpg",
                 "name": "Vineyard 4"

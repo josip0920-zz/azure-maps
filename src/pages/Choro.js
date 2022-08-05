@@ -17,8 +17,7 @@ function Choro(props) {
                 steps: 5,
                 mode: "q",
                 style: function (feature) { // Style option
-                    console.log(search, feature.properties.name)
-                    if (search && String(feature.properties.name).toLowerCase().search(String(search).toLowerCase()) != -1) {
+                    if (search.indexOf(feature.properties.id) != -1) {
                         return {
                             'weight': 1.5,
                             'color': 'red',
