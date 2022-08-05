@@ -11,7 +11,7 @@
             "type": "Feature",
             "properties": {
                 "TOTAL": 63,
-                "img": "1.jpg",
+                "img": "3.jpg",
                 "name": "Vineyard 1"
             },
             "geometry": {
@@ -190,7 +190,7 @@
             "type": "Feature",
             "properties": {
                 "TOTAL": 21,
-                "img": "2.jpg",
+                "img": "4.jpg",
                 "name": "Vineyard 1"
             },
             "geometry": {
