@@ -10,16 +10,9 @@
         {
             "type": "Feature",
             "properties": {
-                "index_right": 0,
-                "quadrant": "HH",
-                "metric_weekday": "Saturday",
-                "metric_hour": 2,
-                "YELLOW": 0,
-                "GREEN": 0,
-                "HV": 31.5,
-                "DIFF": 31.5,
-                "TOTAL": 31.5,
-                "sq_mi": 0.07251791721676408
+                "TOTAL": 63,
+                "img": "1.jpg",
+                "name": "Vineyard 1"
             },
             "geometry": {
                 "type": "Polygon",
@@ -187,6 +180,37 @@
                         ],
                         [
                             173.718680632181,
+                            -41.5275314820192
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "TOTAL": 21,
+                "img": "2.jpg",
+                "name": "Vineyard 1"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            173.738878439009,
+                            -41.5424680296457
+                        ],
+                        [
+                            173.748427694184,
+                            -41.5392542951666
+                        ],
+                        [
+                            173.749043241406,
+                            -41.5292504479829
+                        ],
+                        [
+                            173.738680632181,
                             -41.5275314820192
                         ]
                     ]
